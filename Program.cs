@@ -27,9 +27,9 @@ namespace CountingCharacters
 
             //        latinText.Add(letter, count);
 
-            char[] charsToTrim = { ' ', ',', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+            //char[] charsToTrim = { ' ', ',', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
             //Console.WriteLine(latin.Trim(charsToTrim));
-            //Dictionary<char, int> latinText = new Dictionary<char, int>();
+            
             foreach (char letter in latin.ToLower().ToArray())
                 if (!latinText.ContainsKey(letter))
                     latinText.Add(letter, 1);
