@@ -37,7 +37,7 @@ namespace CountingCharacters
                     latinText[letter] = latinText[letter] + 1;
             foreach (char latinItem in latinText.Keys)
             {
-                Console.WriteLine($"{latinItem} repeats {latinText[latinItem]} time(s).");
+                Console.WriteLine($"{latinItem}: {latinText[latinItem]}");
             }
 
             Console.ReadLine();
