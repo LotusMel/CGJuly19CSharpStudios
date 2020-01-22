@@ -21,20 +21,20 @@ namespace CountingCharacters
             
             //char myKey = alpha[count];
 
-            foreach (char letter in latin)
-            {
-                for (int count = 0; count < latin.Length; count++)
-                
-                latinText.Add(letter, count);
+            //foreach (char letter in latin)
+            //{
+            //    for (int count = 0; count < latin.Length; count++)
+
+            //        latinText.Add(letter, count);
                 
 
+            //}
+            foreach (KeyValuePair<char, int> alphabet in latinText)
+            {
+
+                Console.WriteLine(alphabet.Key, alphabet.Value);
             }
-                foreach (KeyValuePair<char, int> alphabet in latinText)
-                {
-                    
-                    Console.WriteLine(alphabet.ToString(), alphabet.Value);
-                }
-                Console.ReadLine();
+            Console.ReadLine();
 
             
             //string sample = "Foe Doe";
