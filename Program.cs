@@ -18,7 +18,7 @@ namespace CountingCharacters
                 "Donec nec velit non ligula efficitur luctus.";
 
             //char[] alpha = latin.ToCharArray();
-            
+
             //char myKey = alpha[count];
 
             //foreach (char letter in latin)
@@ -26,28 +26,21 @@ namespace CountingCharacters
             //    for (int count = 0; count < latin.Length; count++)
 
             //        latinText.Add(letter, count);
-                
 
-            //}
-            foreach (KeyValuePair<char, int> alphabet in latinText)
+            char[] charsToTrim = { ' ', ',', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
+            //Console.WriteLine(latin.Trim(charsToTrim));
+            //Dictionary<char, int> latinText = new Dictionary<char, int>();
+            foreach (char letter in latin.ToLower().ToArray())
+                if (!latinText.ContainsKey(letter))
+                    latinText.Add(letter, 1);
+                else
+                    latinText[letter] = latinText[letter] + 1;
+            foreach (char latinItem in latinText.Keys)
             {
-
-                Console.WriteLine(alphabet.Key, alphabet.Value);
+                Console.WriteLine($"{latinItem} repeats {latinText[latinItem]} time(s).");
             }
+
             Console.ReadLine();
-
-            
-            //string sample = "Foe Doe";
-
-            //    var letterCounter = sample.Where(char.IsLetterOrDigit)
-            //                      .GroupBy(char.ToLower)
-            //                      .Select(counter => new { Letter = counter.Key, Counter = counter.Count() });
-
-            //foreach (var counter in letterCounter)
-            //{
-            //    Console.WriteLine(String.Format("{0} = {1}", counter.Letter, counter.Counter));
-            //}
-            //Console.ReadLine();
         }
 
     }
